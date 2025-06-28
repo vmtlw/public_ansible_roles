@@ -1,0 +1,13 @@
+---
+driver:
+  name: docker
+platforms:
+  - name: instance
+    image: debian:bookworm
+    pre_build_image: true
+
+
+provisioner:
+  name: ansible
+  env:
+    ANSIBLE_ROLES_PATH: /home/vladimir/projects/roles

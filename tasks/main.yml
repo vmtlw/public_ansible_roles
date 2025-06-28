@@ -1,0 +1,12 @@
+---
+- name: Установить Zabbix агент
+  ansible.builtin.package:
+    name: zabbix-agent2
+    state: present
+
+- name: Обновить параметр Server в конфиге Zabbix агента
+  ansible.builtin.lineinfile:
+    path: /etc/zabbix/zabbix_agent2.conf
+    regexp: '^ServerActive='
+    line: "ServerActive={{ zabbix_server }}"
+  notify: Restart zabbix-agent
