@@ -2,9 +2,13 @@
 
 Роль имеет встроенные тесты на движке docker
 
-Чтобы прогнать тесты сперва выполните python пакет molecule:
+Чтобы прогнать тесты сперва установите python пакет molecule:
 
 ```
+cd /tmp
+git clone https://github.com/vmtlw/public_ansible_roles && cd public_ansible_roles 
+python -m venv env 
+source env/bin/activate
 pip install "molecule[docker]" ansible
 ```
 
